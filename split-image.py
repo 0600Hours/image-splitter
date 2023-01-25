@@ -33,7 +33,7 @@ wt = src.shape[1]
 for row in range(1, ht):
   pxl = src[row, col]
   if (row == ht - 1 or totuple(pxl) == bgr):
-    out = os.path.join(folder_name, f'{src_prefix}_{count}.{src_type}')
+    out = os.path.join(folder_name, f'{src_prefix}_{str(count).zfill(4)}.{src_type}')
     cv2.imwrite(out, src[prev:row + 1, 0:wt])
     count += 1
     prev = row
